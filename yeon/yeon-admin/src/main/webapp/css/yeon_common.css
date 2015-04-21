@@ -1,0 +1,195 @@
+@CHARSET "UTF-8";
+
+/* common */
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, select, button {margin:0;padding:0}
+body, input, textarea, select, table, button {font-family:"돋움", Dotum, AppleGothic, sans-serif; font-size:12px}
+img, fieldset {border:0}
+hr {display:none}
+li {list-style:none}
+em, address {font-style:normal}
+a {text-decoration:none}
+a:hover, a:active, a:focus {text-decoration:underline}
+.blind {position:absolute; top:0; left:0; width:1px; height:1px; overflow:hidden; visibility:hidden; font-size:0; line-height:0}
+
+/* inline & block's position */
+.tl {text-align:left !important}
+.tc {text-align:center}
+.fl {float:left}
+.fr {float:right}
+
+/* buttons */
+.btn_big {display:inline-block; padding-right:3px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 100% 0; font-size:12px; color:#444; line-height:26px; word-spacing:-1px; text-decoration:none !important; white-space:nowrap}
+.btn_big input[type=submit],
+.btn_big input[type=button],
+.btn_big button {cursor:hand; border:0; padding:6px 9px 5px 12px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat; font-size:12px; color:#444; line-height:15px; word-spacing:-2px; text-decoration:none !important; white-space:nowrap}
+.btn_sml {display:inline-block; padding-right:3px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 100% -27px; font-size:11px; color:#444; line-height:21px; letter-spacing:-1px; word-spacing:-1px; text-decoration:none !important; white-space:nowrap}
+.btn_sml input[type=submit],
+.btn_sml input[type=button],
+.btn_sml button {cursor:hand; border:0; padding:4px 5px 3px 7px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 0 -27px; font-size:11px; color:#444; line-height:14px; letter-spacing:-1px; word-spacing:-2px; text-decoration:none !important; white-space:nowrap}
+.btn_xsml {display:inline-block; padding-right:3px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 100% -48px; font-size:11px; color:#777; line-height:19px; letter-spacing:-1px; word-spacing:-1px; text-decoration:none !important}
+.btn_xsml input[type=submit],
+.btn_xsml input[type=button],
+.btn_xsml button {cursor:hand; border:0; padding:3px 6px 2px 7px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 0 -48px; font-size:11px; color:#777; line-height:15px; letter-spacing:-1px; word-spacing:-1px; text-decoration:none !important}
+
+/*
+a.btn_big {display:inline-block; padding-right:3px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 100% 0; font-size:12px; color:#444; line-height:26px; word-spacing:-1px; text-decoration:none !important; white-space:nowrap}
+a.btn_big span,
+a.btn_big strong {display:block; padding:1px 9px 0 12px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat}
+a.btn_big input[type=submit],
+a.btn_big input[type=button],
+a.btn_big button {cursor:hand; border:0; padding:6px 9px 5px 12px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat; font-size:12px; color:#444; line-height:15px; word-spacing:-2px; text-decoration:none !important; white-space:nowrap}
+a.btn_sml {display:inline-block; padding-right:3px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 100% -27px; font-size:11px; color:#444; line-height:21px; letter-spacing:-1px; word-spacing:-1px; text-decoration:none !important; white-space:nowrap}
+a.btn_sml span,
+a.btn_sml strong {display:block; padding:1px 5px 0 7px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 0 -27px}
+a.btn_xsml {display:inline-block; padding-right:3px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 100% -48px; font-size:11px; color:#777; line-height:19px; letter-spacing:-1px; word-spacing:-1px; text-decoration:none !important}
+a.btn_xsml span,
+a.btn_xsml strong {display:block; padding:1px 6px 0 7px; background:url(http://static.naver.net/groupware/2010/bg_btn_default.gif) no-repeat 0 -48px}
+*/
+
+/* title */
+h3 {margin:0 0 20px 10px; padding:0 0 0 11px; background:url(http://static.naver.net/groupware/common/bu_h3.gif) no-repeat left top; font-size:16px; letter-spacing:-1px; word-spacing:1px;}
+h4 {margin:30px 0 10px 11px; padding:0 0 0 9px; background:url(http://static.naver.net/groupware/common/bu_h4.gif) no-repeat left top; color:#666; font-size:12px; letter-spacing:-1px;}
+
+.tbl_title {margin:0; padding:0;}
+.tbl_title table {width:100%; border:0; border-spacing:0}
+.tbl_title table td.title {margin:0; padding:0}
+.tbl_title table td.btn {margin:0; padding:10px 11px 6px 0; vertical-align:bottom; text-align:right}
+
+table {width:100%; margin-bottom:-1px; border-collapse:collapse; table-layout:fixed; line-height:16px; border-spacing:0}
+table th {padding:6px 0; background:#f1f1f3; color:#666}
+table td {padding:6px 0; background:url(http://static.naver.net/groupware/2010/line_tbl_dot.gif) repeat-x 0 100%; color:#333; text-align:left;}
+table td.btn {padding-right:10px; text-align:right}
+table .tl {padding-left:10px}
+table tr.bon td {background-color:#e5f1f9}
+table tr.yon td {background-color:#fbfae1}
+
+/* tbl_type1 */
+.tbl_type1 {display:inline-block; overflow:hidden; width:100%; border-top:1px solid #dddee2; border-bottom:1px solid #dddee2}
+.tbl_type1 table {width:100%; margin-bottom:-1px; border-collapse:collapse; table-layout:fixed; line-height:16px; border-spacing:0}
+.tbl_type1 table thead th {padding:6px 0; background:#f1f1f3; color:#666; text-align: center;}
+.tbl_type1 table tbody td {padding:6px 0; background:url(http://static.naver.net/groupware/2010/line_tbl_dot.gif) repeat-x 0 100%; color:#333; text-align:left;}
+.tbl_type1 table tbody td.btn {padding-right:10px; text-align:right}
+.tbl_type1 table .tl {padding-left:10px}
+.tbl_type1 table tr.bon td {background-color:#e5f1f9}
+.tbl_type1 table tr.yon td {background-color:#fbfae1}
+
+/* tbl_type2 */
+.tbl_type2 {display:inline-block; overflow:hidden; width:100%; border-top:1px solid #dddee2; border-bottom:1px solid #dddee2}
+.tbl_type2 table {width:100%; margin-bottom:-1px; border-collapse:collapse; table-layout:fixed; line-height:16px; border-spacing:0; text-align:center}
+.tbl_type2 table thead th {padding:6px 0; background:#f1f1f3; color:#666; text-align: center;}
+.tbl_type2 table tbody td {padding:6px 0; background:url(http://static.naver.net/groupware/2010/line_tbl_dot.gif) repeat-x 0 100%; color:#333;; text-align:center}
+.tbl_type2 table tbody td.btn {padding-right:10px; text-align:right}
+.tbl_type2 table .tl {padding-left:10px}
+.tbl_type2 table tr.bon td {background-color:#e5f1f9}
+.tbl_type2 table tr.yon td {background-color:#fbfae1}
+
+/* tbl_type3 */
+.tbl_type3 {}
+.tbl_type3 .light {color:#888}
+.tbl_type3 table {width:100%; border:0; border-top:1px solid #dddee2; line-height:16px; table-layout:fixed; border-spacing:0}
+.tbl_type3 table th,
+.tbl_type3 table td {border:0; border-bottom:1px solid #dddee2; vertical-align:top}
+.tbl_type3 table th {padding:6px 0 5px; background:#f1f1f3; color:#666; text-align: center;}
+.tbl_type3 table td {padding:6px 15px 5px; color:#333; text-align:left}
+.tbl_type3 table td.tc {text-align:center}
+.tbl_type3 table td ul {margin-bottom:-5px}
+.tbl_type3 table td ul li {margin-bottom:5px}
+.tbl_type3 table td ul li a {display:inline-block; margin-left:10px}
+.tbl_type3 div.title {float:left}
+.tbl_type3 div.btn {float:right; margin:30px 0 10px 11px; padding-right:9px; text-align:right}
+
+/* inner_tbl_type1 */
+.inner_tbl_type1 {padding:8px 13px}
+.inner_tbl_type1 table {border:1px solid #e5e6e9}
+.inner_tbl_type1 table th {padding:4px 0;border:0;color:#999;text-align:center}
+.inner_tbl_type1 table td {padding:4px 15px;border:0;color:#666;text-align:left}
+.inner_tbl_type1 table.tbl_inner_x td {text-align:center}
+.inner_tbl_type1 table td a {color:#666}
+
+/* tbl_forms */
+.tbl_forms table td {padding:4px 11px}
+.tbl_forms table td input,
+.tbl_forms table td select,
+.tbl_forms table td label {vertical-align:middle}
+.tbl_forms table td .input_txt {height:16px; padding:0 3px; border:1px solid #ccc; line-height:15px}
+.tbl_forms table td .input_txt_2 {width:14px}
+.tbl_forms table td .input_txt_3 {width:21px}
+.tbl_forms table td .input_txt_4 {width:28px}
+.tbl_forms table td .input_txt_5 {width:35px}
+.tbl_forms table td .input_rdo {*margin:-1px -3px}
+.tbl_forms table td .btn_xsml {margin-top:-1px; vertical-align:middle}
+.tbl_forms table td.se {padding:9px 11px}
+.tbl_forms table td .input_chk {*margin:-2px 0}
+.tbl_forms table td.btn {padding-right:9px; text-align:right}
+
+/* inquiry_type1 */
+.inquiry_type1 {position:relative; margin:0; padding:10px 0 14px; border:1px solid #dddee2; background-color:#f1f1f3}
+.inquiry_type1 legend {display:none}
+.inquiry_type1 table {width:100%; border:0; border-spacing:0}
+.inquiry_type1 table th {padding:14px 10px 0 10px; border:0; color:#666; text-align:left; vertical-align:top}
+.inquiry_type1 table td {padding:10px 10px 0 0; border:0; color:#464646;}
+.inquiry_type1 table tr.logtype th {padding-top:14px; vertical-align:top}
+.inquiry_type1 table tr.logtype td {padding-top:14px; *padding-top:12px; vertical-align:top}
+.inquiry_type1 table td .input_chk {*margin:-3px -3px 0 -4px; vertical-align:middle}
+.inquiry_type1 table td label {margin:0 0 0 5px; font-size:11px; cursor:pointer; _cursor:hand}
+.inquiry_type1 table td .box {margin:6px 0 0; *margin:2px 0 0; padding:12px 12px 3px 32px; background-color:#f4f4f4; border:1px solid #d6d6d6}
+.inquiry_type1 table td .box span {padding:0 0 10px; *padding:0 0 7px; display:inline-block; width:104px}
+.inquiry_type1 table td .box label {color:#6d6d6d}
+.inquiry_type1 table td.period {}
+.inquiry_type1 table td.period img {margin:2px 0 0; *margin-top:3px; vertical-align:top}
+.inquiry_type1 table td.period .group {float:left; font-size:11px}
+.inquiry_type1 table td.period .group input {vertical-align:middle}
+.inquiry_type1 table td.btn {padding-right:9px; text-align:right}
+.inquiry_type1 select {font-family:돋움; font-size:12px; line-height:16px}
+.inquiry_type1 .input_txt {width:100px; height:16px; margin:1px 0; *margin:0; padding:1px 5px 0; border:1px solid #ccc; font-size:12px; line-height:16px}
+.inquiry_type1 .input_txt_v1,
+.inquiry_type1 .input_txt_v2 {height:14px; padding-top:2px; font-family:tahoma,verdana; font-size:11px; line-height:11px}
+.inquiry_type1 .input_txt_v1 {width:57px}
+.inquiry_type1 .input_txt_v2 {width:14px}
+.inquiry_type1 .input_txt_t1 {width:21px}
+.inquiry_type1 .input_txt_t2 {width:28px}
+.inquiry_type1 label {vertical-align:middle}
+
+/* tab - Jindo TabControl 사용을 위해 수정 */
+.tc-panel { display:none; }
+.tabs { position:relative; height:29px; margin-top:20px; background:url(http://static.naver.net/groupware/common/tab_menu.gif) repeat-x 0 100%; list-style:none;  z-index:1; _zoom:1}
+.tabs li,
+.tabs li a {background:url(http://static.naver.net/groupware/2010/bg_tab2_off.gif) no-repeat}
+.tabs li {float:left; margin-right:-1px; line-height:16px; cursor:pointer; _cursor:hand; position:relative}
+.tabs li a {display:inline-block; padding:7px 16px 6px; _padding:8px 16px 5px; background-position: 100% 0; font-weight:bold; color:#666; text-decoration:none !important}
+.tabs li.tc-selected,
+.tabs li.tc-selected a {background-image:url(http://static.naver.net/groupware/2010/bg_tab2_on.gif)}
+.tabs li.tc-selected a {color:#3376b8; cursor:default}	
+.panels { padding:0; margin:0; list-style:none; border:0; padding:20px; position:relative; top:-1px; clear:both; background-color:#fff; }
+.panels .tc-panel.tc-selected { display:block; }
+
+/* progress */
+.progress {overflow:hidden; position:relative; height:25px; margin:10px 0 0; background:url(http://static.naver.net/groupware/2010/bg_progress.gif); border-right:1px solid #e3e3e3; font-size:11px; line-height:15px; letter-spacing:-1px}
+.progress .tit {float:left; position:relative; z-index:2; width:74px; height:20px; margin:0; padding:5px 0 0; background:url(http://static.naver.net/groupware/2010/bg_progress_tit.gif) no-repeat; font-size:11px; color:#fff; line-height:15px; text-align:center}
+.progress ol {float:left}
+.progress li,
+.progress li span {background:url(http://static.naver.net/groupware/2010/bg_progress_item.gif) no-repeat; font-size:11px; white-space:nowrap}
+.progress li {float:left; margin:0 0 0 -13px; padding:0 0 0 13px; background-position:-287px 0}
+.progress li span {display:inline-block; height:20px; padding:5px 25px 0 13px; background-position:100% top}
+.progress li.on {position:relative; z-index:1; background-position:0 100%; color:#fff}
+.progress li.on span {background:url(http://static.naver.net/groupware/2010/bg_progress_item.gif) no-repeat 100% 100%}
+.progress li.last,
+.progress li.last span {background:none}
+.progress .right {position:absolute; top:6px; right:10px; color:#444}
+
+/* functions */
+.functions {position:relative; text-align:center; margin:6px 0 0 0}
+.functions .paginate {margin:0 auto}
+.functions_left {position:absolute; top:0; left:5px}
+.functions_right {position:absolute; top:0; right:5px}
+
+/* paginate */
+.paginate{display:inline-block; padding-top:5px; text-align:center}
+.paginate a,
+.paginate strong{display:inline-block; margin-right:-4px; padding:2px 8px 2px 7px; border-left:1px solid #ccc; background:#fff; font-weight:bold; color:#313031; line-height:15px; text-decoration:none !important}
+.paginate strong{color:#ff8600}
+.paginate a:hover{background:#F7F7F7; color:#000}
+.paginate a.pre{padding-left:16px; background:url(http://static.naver.net/common/paginate/bu_pg1_l1.gif) no-repeat 8px 7px !important; border:0; font-weight:normal}
+.paginate a.pre_end{padding-left:16px; background:url(http://static.naver.net/common/paginate/bu_pg1_l2.gif) no-repeat 4px 7px !important; border:0; border-right:1px solid #ccc; font-weight:normal}
+.paginate a.next{padding-right:16px; background:url(http://static.naver.net/common/paginate/bu_pg1_r1.gif) no-repeat 37px 7px !important; font-weight:normal}
+.paginate a.next_end{padding-right:16px; background:url(http://static.naver.net/common/paginate/bu_pg1_r2.gif) no-repeat 37px 7px !important; font-weight:normal}

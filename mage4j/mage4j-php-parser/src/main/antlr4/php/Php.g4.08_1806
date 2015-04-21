@@ -1,0 +1,533 @@
+grammar Php;
+
+options {
+
+}
+
+tokens{
+}
+
+@header {
+}
+
+SemiColon 			: ';';
+Comma 				: ',';
+OpenBrace 			: '(';
+CloseBrace 			: ')';
+OpenSquareBrace 	: '[';
+CloseSquareBrace 	: ']';
+OpenCurlyBrace		: '{';
+CloseCurlyBrace		: '}';
+ArrayAssign 		: '=>';
+LogicalOr 			: '||';
+LogicalAnd 			: '&&';
+ClassMember 		: '::';
+InstanceMember 		: '->';
+SuppressWarnings 	: '@';
+QuestionMark 		: '?';
+Dollar 			: '$';
+Colon 			: ':';
+Dot 			: '.';
+Ampersand 		: '&';
+Pipe 			: '|';
+Bang 			: '!';
+Plus 			: '+';
+Minus 			: '-';
+Asterisk 		: '*';
+Percent 		: '%';
+Forwardslash 	: '/'; 
+Tilde 			: '~';
+Equals 			: '=';
+New 			: 'new';
+Clone 			: 'clone';
+Echo 			: 'echo';
+Print 			: 'print';
+If 				: 'if';
+Else 			: 'else';
+ElseIf 			: 'elseif';
+For 			: 'for';
+Foreach 		: 'foreach';
+While 			: 'while';
+Do 				: 'do';
+Switch 			: 'switch';
+Case 			: 'case';
+Default 		: 'default';
+Function 		: 'function';
+Break 			: 'break';
+Continue 		: 'continue';
+Return 			: 'return';
+Global 			: 'global';
+Static 			: 'static';
+And 			: 'and';
+Or 				: 'or';
+Xor 			: 'xor';
+Instanceof 		: 'instanceof';
+
+Class 			: 'class';
+Interface 		: 'interface';
+Extends 		: 'extends';
+Implements 		: 'implements';
+Abstract 		: 'abstract';
+Var 			: 'var';
+Const 			: 'const';
+Throw			: 'throw';
+Try				: 'try';
+Catch			: 'catch';
+Null 			: 'null';
+As				: ('a'|'A') ('s' | 'S') ;
+Array		    : ('a'|'A')('r'|'R')('r'|'R')('a'|'A')('y'|'Y');
+
+prog : statement*;
+
+statement
+    : simpleStatement? (BodyString | FirstBodyString)
+    | bracketedBlock
+    | classDefinition
+    | interfaceDefinition
+    | complexStatement ';'*
+    | simpleStatement ';'+
+    ;
+    
+bracketedBlock
+    : '{' stmts=statement* '}'
+    ;
+
+interfaceDefinition
+    : Interface interfaceName=UnquotedString interfaceExtends?
+        OpenCurlyBrace interfaceMember* CloseCurlyBrace
+	;
+
+interfaceExtends
+    : Extends UnquotedString (Comma UnquotedString)*
+    ;
+interfaceMember
+    : Const UnquotedString (Equals atom)? ';'
+    | fieldModifier* Function UnquotedString parametersDefinition ';'
+    ;
+
+classDefinition
+    : classModifier? Class className=UnquotedString
+   		(Extends extendsclass=UnquotedString)? classImplements?
+        OpenCurlyBrace classMember* CloseCurlyBrace
+    ;
+    
+classImplements
+    :  Implements (UnquotedString (Comma UnquotedString)*)
+    ;
+
+classMember
+    : fieldModifier* Function '&'? UnquotedString parametersDefinition (bracketedBlock | ';')
+    | Var Dollar UnquotedString (Equals (atom | staticMemberAccess))? ';'
+    | Const UnquotedString (Equals (atom | staticMemberAccess))? ';'
+    | fieldModifier* (Dollar UnquotedString) (Equals (atom | staticMemberAccess))? ';'
+    ;
+
+fieldDefinition
+    : Dollar UnquotedString (Equals atom)? ';'
+    ;
+    
+classModifier
+    : 'abstract';
+    
+fieldModifier
+    : AccessModifier | 'abstract' | 'static' | 'final'
+    ;
+    
+complexStatement
+    : If '(' (ifCondition=expression | '!' ifCondition=expression) ')' ifTrue=statement conditional?
+    | For '(' forInit forCondition forUpdate ')' statement
+    | Foreach '(' expression As arrayEntry ')' statement
+    | While '(' whileCondition=expression? ')' statement
+    | Do statement While '(' doCondition=expression ')' ';'
+    | Switch '(' expression ')' '{'cases'}'
+    | Try bracketedBlock ( Catch '(' typeDeclaration variable ')' bracketedBlock )+
+    | functionDefinition
+    ;
+
+simpleStatement
+    : Echo commaList
+    | Print commaList
+    | Global name (',' name)*
+    | Static variable (Equals atom)?
+    | Break Integer?
+    | Continue Integer?
+    | Return expression?
+    | RequireOperator expression
+    | Throw expression
+    | expression
+    ;
+
+
+conditional
+    : ElseIf '(' ifCondition=expression ')' ifTrue=statement conditional?
+    | Else statement
+    ;
+
+forInit
+    : commaList? ';'
+    ;
+
+forCondition
+    : commaList? ';'
+    ;
+    
+forUpdate
+    : commaList?
+    ;
+
+cases 
+    : casestatement*  defaultcase?
+    | defaultcase casestatement*
+    | casestatement+ defaultcase casestatement+
+    ;
+
+casestatement
+    : Case expression Colon statement*
+    ;
+
+defaultcase 
+    : (Default Colon statement*)
+    ;
+
+functionDefinition
+    : Function UnquotedString parametersDefinition bracketedBlock
+    ;
+
+parametersDefinition
+    : OpenBrace (paramDef (Comma paramDef)*)? CloseBrace
+    ;
+
+paramDef
+    : typeDeclaration? paramName (Equals (atom | staticMemberAccess))?
+    ;
+    
+typeDeclaration
+	: UnquotedString
+	| Array
+	| PrimitiveType
+	;
+
+paramName
+    : variable
+    | Ampersand variable
+    ;
+
+commaList
+    : expression (',' expression)* 
+    ;
+    
+expression
+	: weakLogicalOr
+    ;
+
+weakLogicalOr
+    : weakLogicalXor (Or weakLogicalXor)*
+    ;
+
+weakLogicalXor
+    : weakLogicalAnd (Xor weakLogicalAnd)*
+    ;
+    
+weakLogicalAnd
+    : assignment (And assignment)*
+    ;
+
+assignment
+    : reference ((Equals | AsignmentOperator) assignment)
+    | ternary
+    ;
+
+ternary
+    : logicalOr QuestionMark expression Colon expression
+    | logicalOr
+    ;
+    
+logicalOr
+    : logicalAnd (LogicalOr logicalAnd)*
+    ;
+
+logicalAnd
+    : bitwiseOr (LogicalAnd bitwiseOr)*
+    ;
+    
+bitwiseOr
+    : bitWiseAnd (Pipe bitWiseAnd)*
+    ;
+
+bitWiseAnd
+    : equalityCheck (Ampersand equalityCheck)*
+    ;
+
+equalityCheck
+    : comparisionCheck (EqualityOperator comparisionCheck)?
+    ;
+    
+comparisionCheck
+    : bitWiseShift (ComparisionOperator bitWiseShift)?
+    ;
+
+bitWiseShift
+    : addition (ShiftOperator addition)*
+    ;
+    
+addition
+    : multiplication ((Plus | Minus | Dot) multiplication)*
+    ;
+
+multiplication
+    : logicalNot ((Asterisk | Forwardslash | Percent) logicalNot)*
+    ;
+
+logicalNot
+    : Bang logicalNot
+    | instanceOf
+    ;
+
+instanceOf
+    : negateOrCast (Instanceof negateOrCast)?
+    ;
+
+negateOrCast
+    : (Tilde | Minus | SuppressWarnings) increment
+    | (OpenBrace (PrimitiveType | Array) CloseBrace)+ (logicalNot | '(' expression ')')
+    | OpenBrace weakLogicalAnd CloseBrace
+    | increment
+    ;
+
+increment
+    : IncrementOperator name
+    | name IncrementOperator
+    | newOrClone
+    ;
+
+newOrClone
+    : New nameOrFunctionCall
+    | Clone (name | '(' name ')')
+    | atomOrReference
+    ;
+
+atomOrReference
+    : atom
+    | reference
+    ;
+
+arrayDeclaration
+    : Array OpenBrace (arrayEntry (Comma arrayEntry)* Comma?)? CloseBrace
+    ;
+
+arrayEntry
+    : (keyValuePair | expression)
+    ;
+
+keyValuePair
+    : (expression ArrayAssign expression)
+    ;
+
+atom
+	: SingleQuotedString 
+	| DoubleQuotedString 
+	| HereDoc 
+	| '-'? Integer
+	| Real 
+	| Boolean 
+	| arrayDeclaration
+	| Null
+    ;
+
+//Need to be smarter with references, they have their own tower of application.
+reference
+    : Ampersand nameOrFunctionCall
+    | nameOrFunctionCall
+    ;
+
+nameOrFunctionCall
+	: name
+	| functionCall
+	;
+	
+functionCall
+	: name OpenBrace (expression (Comma expression)*)? CloseBrace
+	;
+
+name
+	: staticMemberAccess
+	| memberAccess
+    | variable
+    ;
+    
+staticMemberAccess
+    : UnquotedString '::' (variable | functionCall)
+    	( OpenSquareBrace expression CloseSquareBrace
+    	    | '{' expression '}' 
+    		| '->' ('{' expression '}' | variable | functionCall) )* 
+     	( OpenSquareBrace CloseSquareBrace )?
+    ;
+    
+memberAccess
+    : variable 
+    	( OpenSquareBrace expression CloseSquareBrace 
+    		| '{' expression '}'
+    		| '->' ('{' expression '}' | variable | functionCall) )* 
+     	( OpenSquareBrace CloseSquareBrace )?
+    ;
+    
+variable
+    : SuppressWarnings? Dollar? (UnquotedString | Array | PrimitiveType | Class | Var | Do | Default | Return | Catch | New | Break | Continue | RequireOperator | AccessModifier | Function)
+    ;
+
+BodyString 
+    : '?>' (/*('<' ~ '?')=> '<' |*/ ~'<' )* ('<?' ('php'?))?
+    ;
+
+FirstBodyString
+    : '<?' ('php'?)
+    ;
+
+MultilineComment    
+	: '/*' .*? '*/' -> channel(HIDDEN)
+    ;
+
+SinglelineComment
+    : '//'  ('?' | ~('\n'|'?'))* -> channel(HIDDEN)
+    ;
+
+UnixComment
+    : '#' ('?' | ~('\n'|'?'))* -> channel(HIDDEN)
+    ;
+    
+RequireOperator
+    : 'require' | 'require_once' | 'include' | 'include_once'
+    ;
+
+PrimitiveType
+    : 'int'|'float'|'string'|'array'|'object'|'bool'
+    ;
+	
+AccessModifier
+    : 'public' | 'private' | 'protected' 
+    ;
+
+fragment
+Decimal	
+	:('1'..'9' ('0'..'9')*)|'0'
+	;
+fragment
+Hexadecimal
+	: '0'('x'|'X')('0'..'9'|'a'..'f'|'A'..'F')+
+	;
+	
+fragment
+Octal
+	: '0'('0'..'7')+
+	;
+Integer
+	:Octal|Decimal|Hexadecimal
+	;
+	
+fragment
+Digits
+	: '0'..'9'+
+	;
+	
+fragment
+DNum
+	:(/*('.' Digits)=>*/('.' Digits)|(Digits '.' Digits?))
+	;
+	
+fragment
+Exponent_DNum
+	:((Digits|DNum)('e'|'E')('+''-')?Digits)
+	;
+	
+Real
+    : DNum|Exponent_DNum
+    ;
+
+Boolean
+    : 'true' | 'false'
+    ;
+
+SingleQuotedString
+	:	'\'' ('\\' . | ~'\'' )*? '\''
+    ;
+
+fragment
+EscapeCharector
+    : 'n' | 'r' | 't' | '\\' | '$' | '"' | Digits | 'x'
+    ;
+
+DoubleQuotedString
+    : '"' ('\\' . | ~'"' )*? '"' 
+    ;
+
+HereDoc 
+    : '<<<' {
+        StringBuilder sb = new StringBuilder();
+        while(_input.LA(1)!='\n'){
+            sb.append((char)_input.LA(1));
+            _input.consume();
+        }
+        _input.consume();
+        String hereDocName = sb.toString();
+        int hdnl = hereDocName.length();
+        while(true){
+            boolean matchEnd = true;
+            for(int i = 0; i<hdnl; i++){
+                if(_input.LA(1)!=hereDocName.charAt(i)){
+                    matchEnd=false;
+                    break;
+                }
+                _input.consume();
+            }
+            if(matchEnd==false){
+                while(_input.LA(1)!='\n'){
+                    _input.consume();
+                }
+                _input.consume();
+            }else{
+                break;
+            }
+        }
+    }
+    ;
+
+//Todo handle '\x7f' - '\xff'
+UnquotedString
+   : ('a'..'z' | 'A'..'Z' | '_')  ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*
+   ;
+   
+AsignmentOperator
+    : '+=' | '-=' | '*=' | '/=' | '.=' | '%=' | '&=' | ' | =' | '^=' | '<<=' | '>>='
+    ;
+    
+EqualityOperator
+    : '==' | '!=' | '===' | '!=='
+    ;
+
+ComparisionOperator
+    : '<' | '<=' | '>' | '>=' | '<>'
+    ;
+    
+ShiftOperator
+    : '<<' | '>>'
+    ;
+
+IncrementOperator
+    : '--'|'++'
+    ;
+    
+
+fragment
+Eol 
+	: '\n'
+    ;
+
+WhiteSpace
+/*@init {
+    $channel=HIDDEN;
+}*/
+	:	(' '| '\t'| '\n'|'\r')* -> skip 
+	;
+	
+
+

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>모바일 상품등록</title>
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.min.css">
+	<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/default.css" id="theme">
+	<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/lib/css/zenburn.css">
+	<script>
+		if( window.location.search.match( /print-pdf/gi ) ) {
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'http://lab.hakim.se/reveal-js/css/print/pdf.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		}
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="reveal">
+	<div id="sliders_area" class="slides" style="width:1400px;">
+		<section>
+			<p>
+				사내 서비스를 보면...
+			</p>
+			<p>
+				블로그, 카페 등 모바일 웹 서비스 글쓰기는 단순한 수준이다.
+			</p>
+			<p>
+				첨부 , 일반 Textarea에서 입력받은 값만 처리한다.
+			</p>
+			<p>
+				모바일환경에서 PC에디터 기능을 다 소화하지 못한다.
+			</p>
+			<p>
+				글쓰기 시 좀더 다양한 기능제공을 위해, 앱이동으로 유도한다.
+			</p>
+			<p>
+				여러사진 첨부 등등. N드라이브 연동 등, 글자 효과등
+			</p>
+		</section>
+		<section>
+			<p>
+				<img src="http://beta.shop1.phinf.naver.net/20140415_71/shopnCommonUser_1397550104481LCsPp_JPEG/446432655232060_303258157.jpg?type=o640">
+				<img src="http://beta.shop1.phinf.naver.net/20140416_233/shopnCommonUser_1397635061619VFPvT_JPEG/25960447223313_1133411779.jpg?type=o640">
+				<img src="http://beta.shop1.phinf.naver.net/20140416_250/shopnCommonUser_1397635122688rQYcs_JPEG/26021589355792_740974105.jpg?type=o640">
+			</p>
+
+		</section>
+		<section>
+			<p>
+				모바일 글쓰기 시 어디에 집중할까? 
+			</p>
+			<br></br>
+			<p>
+				현재 블로그 글쓰기에서 개선점 찾아보자.
+			</p>
+		</section>
+		<section>
+			<p>
+				위지윅(WYSIWYG) 효과
+			</p>
+			<br></br>
+			<p>
+				내가 작성중인 컨텐츠를 미리 확인해보고 싶어요
+			</p>
+		</section>
+		<section>
+			<p>
+				컨텐츠 작성 순서가 유동적이라면...
+				<p>작은화면 단점을 보완해보자~</p>
+			</p>
+			<br></br>
+			<p>
+				먼저 이미지 딱 넣고
+			</p>
+			<p>
+				밑에 설명 적고
+			</p>
+			<p>
+				다시 그 밑에 이미지 넣고 싶고
+			</p>
+			<p>
+				다시 설명 달고 싶고...
+			</p>
+		</section>
+		<section>
+			<p>
+				컨텐츠 레이아웃
+			</p>
+			<br></br>
+			<p>
+				컨텐츠 표현시 레이아웃이 필요할까?
+			</p>
+			<p>
+				사진, 설명 배치를 자유롭게 원할수도 있겠다.
+			</p>
+			<p>
+				그런데 화면이 작아서 효과가 클까?
+			</p>
+
+		</section>
+		<section>
+			<p>
+				기타 사진, 문장 효과?? - 사용빈도가 적을수 있겠다
+			</p>
+			<br></br>
+			<p>
+				하나씩 좋은 기능 addon .. To be continue...
+			</p>
+		</section>
+
+		<section>
+			<p>
+				외부 에디터.. 이제 조사해야 하지만
+			</p>
+			<p>
+				<img src="http://beta.shop1.phinf.naver.net/20140416_134/shopnCommonUser_1397647085909FJ8Ax_JPEG/37984732157365_746588780.jpg?type=o640">
+				<img src="http://beta.shop1.phinf.naver.net/20140416_297/shopnCommonUser_1397647163399Fb551_JPEG/38062220870387_-1427992801.jpg?type=o640">
+			</p>
+		</section>
+
+		<section>
+			<p>
+				<iframe height="700" width="500" src="http://dev.sell.shop.naver.com/p/m/post?site_preference=mobile"></iframe>
+			</p>
+		</section>
+	</div>
+</div>
+<script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+<script src="http://dev.static.shop.naver.net:10080/js_mobile/service/seller_admin/post/doc.js"></script>
+<script>
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+
+		theme: Reveal.getQueryHash().theme,
+		transition: Reveal.getQueryHash().transition || 'default',
+
+		dependencies: [
+			{ src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'http://lab.hakim.se/reveal-js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		]
+	});
+</script>
+<script>
+	var _gaq = [['_setAccount', 'UA-15240703-1'], ['_trackPageview']];
+	(function(d, t) {
+		var g = d.createElement(t),
+			s = d.getElementsByTagName(t)[0];
+		g.async = true;
+		g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g, s);
+	})(document, 'script');
+</script>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+<script>
+	setTimeout(function() {
+		document.getElementById("sliders_area").style.width = "1400px";
+	}, 500)
+</script>
+</body>
+</html>

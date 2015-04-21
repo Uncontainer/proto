@@ -1,0 +1,42 @@
+package com.naver.mage4j.external.zend.locale.data;
+
+import java.util.Map;
+
+import com.naver.mage4j.php.code.PhpAtomArray;
+
+/**
+ * Definition class for all Windows localesBased on this two lists:
+ */
+public class Zend_Locale_Data_Translation {
+	/**
+	 * Locale Translation for Full Named Locales
+	 */
+	public static Map<String, String> languageTranslation = PhpAtomArray.createMap(new Object[] {"Afrikaans", "af"}, new Object[] {"Albanian", "sq"}, new Object[] {"Amharic", "am"}, new Object[] {"Arabic", "ar"}, new Object[] {"Armenian", "hy"}, new Object[] {"Assamese", "as"}, new Object[] {"Azeri", "az"}, new Object[] {"Azeri Latin", "az_Latn"}, new Object[] {"Azeri Cyrillic", "az_Cyrl"}, new Object[] {"Basque", "eu"}, new Object[] {"Belarusian", "be"}, new Object[] {"Bengali", "bn"},
+		new Object[] {
+			"Bengali Latin", "bn_Latn"}, new Object[] {"Bosnian", "bs"}, new Object[] {"Bulgarian", "bg"}, new Object[] {"Burmese", "my"}, new Object[] {"Catalan", "ca"}, new Object[] {"Cherokee", "chr"}, new Object[] {"Chinese", "zh"}, new Object[] {"Croatian", "hr"}, new Object[] {"Czech", "cs"}, new Object[] {"Danish", "da"}, new Object[] {"Divehi", "dv"}, new Object[] {"Dutch", "nl"}, new Object[] {"English", "en"}, new Object[] {"Estonian", "et"}, new Object[] {"Faroese", "fo"},
+		new Object[] {
+			"Faeroese", "fo"}, new Object[] {"Farsi", "fa"}, new Object[] {"Filipino", "fil"}, new Object[] {"Finnish", "fi"}, new Object[] {"French", "fr"}, new Object[] {"Frisian", "fy"}, new Object[] {"Macedonian", "mk"}, new Object[] {"Gaelic", "gd"}, new Object[] {"Galician", "gl"}, new Object[] {"Georgian", "ka"}, new Object[] {"German", "de"}, new Object[] {"Greek", "el"}, new Object[] {"Guarani", "gn"}, new Object[] {"Gujarati", "gu"}, new Object[] {"Hausa", "ha"}, new Object[] {
+			"Hawaiian",
+			"haw"}, new Object[] {"Hebrew", "he"}, new Object[] {"Hindi", "hi"}, new Object[] {"Hungarian", "hu"}, new Object[] {"Icelandic", "is"}, new Object[] {"Igbo", "ig"}, new Object[] {"Indonesian", "id"}, new Object[] {"Inuktitut", "iu"}, new Object[] {"Italian", "it"}, new Object[] {"Japanese", "ja"}, new Object[] {"Kannada", "kn"}, new Object[] {"Kanuri", "kr"}, new Object[] {"Kashmiri", "ks"}, new Object[] {"Kazakh", "kk"}, new Object[] {"Khmer", "km"},
+		new Object[] {"Konkani", "kok"},
+		new Object[] {"Korean", "ko"}, new Object[] {"Kyrgyz", "ky"}, new Object[] {"Lao", "lo"}, new Object[] {"Latin", "la"}, new Object[] {"Latvian", "lv"}, new Object[] {"Lithuanian", "lt"}, new Object[] {"Macedonian", "mk"}, new Object[] {"Malay", "ms"}, new Object[] {"Malayalam", "ml"}, new Object[] {"Maltese", "mt"}, new Object[] {"Manipuri", "mni"}, new Object[] {"Maori", "mi"}, new Object[] {"Marathi", "mr"}, new Object[] {"Mongolian", "mn"}, new Object[] {"Nepali", "ne"},
+		new Object[] {"Norwegian", "no"}, new Object[] {"Norwegian Bokmal", "nb"}, new Object[] {"Norwegian Nynorsk", "nn"}, new Object[] {"Oriya", "or"}, new Object[] {"Oromo", "om"}, new Object[] {"Papiamentu", "pap"}, new Object[] {"Pashto", "ps"}, new Object[] {"Polish", "pl"}, new Object[] {"Portuguese", "pt"}, new Object[] {"Punjabi", "pa"}, new Object[] {"Quecha", "qu"}, new Object[] {"Quechua", "qu"}, new Object[] {"Rhaeto-Romanic", "rm"}, new Object[] {"Romanian", "ro"}, new Object[] {
+			"Russian", "ru"}, new Object[] {"Sami", "smi"}, new Object[] {"Sami Inari", "smn"}, new Object[] {"Sami Lule", "smj"}, new Object[] {"Sami Northern", "se"}, new Object[] {"Sami Skolt", "sms"}, new Object[] {"Sami Southern", "sma"}, new Object[] {"Sanskrit", "sa"}, new Object[] {"Serbian", "sr"}, new Object[] {"Serbian Latin", "sr_Latn"}, new Object[] {"Serbian Cyrillic", "sr_Cyrl"}, new Object[] {"Sindhi", "sd"}, new Object[] {"Sinhalese", "si"}, new Object[] {"Slovak", "sk"},
+		new Object[] {"Slovenian", "sl"}, new Object[] {"Somali", "so"}, new Object[] {"Sorbian", "wen"}, new Object[] {"Spanish", "es"}, new Object[] {"Swahili", "sw"}, new Object[] {"Swedish", "sv"}, new Object[] {"Syriac", "syr"}, new Object[] {"Tajik", "tg"}, new Object[] {"Tamazight", "tmh"}, new Object[] {"Tamil", "ta"}, new Object[] {"Tatar", "tt"}, new Object[] {"Telugu", "te"}, new Object[] {"Thai", "th"}, new Object[] {"Tibetan", "bo"}, new Object[] {"Tigrigna", "ti"}, new Object[] {
+			"Tsonga", "ts"}, new Object[] {"Tswana", "tn"}, new Object[] {"Turkish", "tr"}, new Object[] {"Turkmen", "tk"}, new Object[] {"Uighur", "ug"}, new Object[] {"Ukrainian", "uk"}, new Object[] {"Urdu", "ur"}, new Object[] {"Uzbek", "uz"}, new Object[] {"Uzbek Latin", "uz_Latn"}, new Object[] {"Uzbek Cyrillic", "uz_Cyrl"}, new Object[] {"Venda", "ve"}, new Object[] {"Vietnamese", "vi"}, new Object[] {"Welsh", "cy"}, new Object[] {"Xhosa", "xh"}, new Object[] {"Yiddish", "yi"},
+		new Object[] {"Yoruba", "yo"}, new Object[] {"Zulu", "zu"});;
+
+	/**
+	 * Locale Translation for Full Named Locales
+	 */
+	public static Map<String, String> regionTranslation = PhpAtomArray.createMap(new Object[] {"Albania", "AL"}, new Object[] {"Algeria", "DZ"}, new Object[] {"Argentina", "AR"}, new Object[] {"Armenia", "AM"}, new Object[] {"Australia", "AU"}, new Object[] {"Austria", "AT"}, new Object[] {"Bahrain", "BH"}, new Object[] {"Bangladesh", "BD"}, new Object[] {"Belgium", "BE"}, new Object[] {"Belize", "BZ"}, new Object[] {"Bhutan", "BT"}, new Object[] {"Bolivia", "BO"}, new Object[] {
+		"Bosnia Herzegovina", "BA"},
+		new Object[] {"Brazil", "BR"}, new Object[] {"Brazilian", "BR"}, new Object[] {"Brunei Darussalam", "BN"}, new Object[] {"Cameroon", "CM"}, new Object[] {"Canada", "CA"}, new Object[] {"Chile", "CL"}, new Object[] {"China", "CN"}, new Object[] {"Colombia", "CO"}, new Object[] {"Costa Rica", "CR"}, new Object[] {"Cote d'Ivoire", "CI"}, new Object[] {"Czech Republic", "CZ"}, new Object[] {"Dominican Republic", "DO"}, new Object[] {"Denmark", "DK"}, new Object[] {"Ecuador", "EC"},
+		new Object[] {"Egypt", "EG"}, new Object[] {"El Salvador", "SV"}, new Object[] {"Eritrea", "ER"}, new Object[] {"Ethiopia", "ET"}, new Object[] {"Finland", "FI"}, new Object[] {"France", "FR"}, new Object[] {"Germany", "DE"}, new Object[] {"Greece", "GR"}, new Object[] {"Guatemala", "GT"}, new Object[] {"Haiti", "HT"}, new Object[] {"Honduras", "HN"}, new Object[] {"Hong Kong", "HK"}, new Object[] {"Hong Kong SAR", "HK"}, new Object[] {"Hungary", "HU"}, new Object[] {"Iceland", "IS"},
+		new Object[] {"India", "IN"}, new Object[] {"Indonesia", "ID"}, new Object[] {"Iran", "IR"}, new Object[] {"Iraq", "IQ"}, new Object[] {"Ireland", "IE"}, new Object[] {"Italy", "IT"}, new Object[] {"Jamaica", "JM"}, new Object[] {"Japan", "JP"}, new Object[] {"Jordan", "JO"}, new Object[] {"Korea", "KR"}, new Object[] {"Kuwait", "KW"}, new Object[] {"Lebanon", "LB"}, new Object[] {"Libya", "LY"}, new Object[] {"Liechtenstein", "LI"}, new Object[] {"Luxembourg", "LU"}, new Object[] {
+			"Macau", "MO"}, new Object[] {"Macao SAR", "MO"}, new Object[] {"Malaysia", "MY"}, new Object[] {"Mali", "ML"}, new Object[] {"Mexico", "MX"}, new Object[] {"Moldava", "MD"}, new Object[] {"Monaco", "MC"}, new Object[] {"Morocco", "MA"}, new Object[] {"Netherlands", "NL"}, new Object[] {"New Zealand", "NZ"}, new Object[] {"Nicaragua", "NI"}, new Object[] {"Nigeria", "NG"}, new Object[] {"Norway", "NO"}, new Object[] {"Oman", "OM"}, new Object[] {"Pakistan", "PK"}, new Object[] {
+			"Panama", "PA"}, new Object[] {"Paraguay", "PY"}, new Object[] {"People's Republic of China", "CN"}, new Object[] {"Peru", "PE"}, new Object[] {"Philippines", "PH"}, new Object[] {"Poland", "PL"}, new Object[] {"Portugal", "PT"}, new Object[] {"PRC", "CN"}, new Object[] {"Puerto Rico", "PR"}, new Object[] {"Qatar", "QA"}, new Object[] {"Reunion", "RE"}, new Object[] {"Russia", "RU"}, new Object[] {"Saudi Arabia", "SA"}, new Object[] {"Senegal", "SN"},
+		new Object[] {"Singapore", "SG"}, new Object[] {"Slovakia", "SK"}, new Object[] {"South Africa", "ZA"}, new Object[] {"Spain", "ES"}, new Object[] {"Sri Lanka", "LK"}, new Object[] {"Sweden", "SE"}, new Object[] {"Switzerland", "CH"}, new Object[] {"Syria", "SY"}, new Object[] {"Taiwan", "TW"}, new Object[] {"The Netherlands", "NL"}, new Object[] {"Trinidad", "TT"}, new Object[] {"Tunisia", "TN"}, new Object[] {"UAE", "AE"}, new Object[] {"United Kingdom", "GB"}, new Object[] {
+			"United States", "US"}, new Object[] {"Uruguay", "UY"}, new Object[] {"Venezuela", "VE"}, new Object[] {"Yemen", "YE"}, new Object[] {"Zimbabwe", "ZW"});;
+
+}

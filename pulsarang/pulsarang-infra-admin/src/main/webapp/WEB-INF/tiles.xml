@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- default -->
+    <definition name=".default" template="/WEB-INF/layouts/default.ftl">
+        <put-attribute name="title" value="Pulsarang Infra Admin" />
+        <put-attribute name="meta" value="/WEB-INF/layouts/includes/meta.ftl" />
+        <put-attribute name="top" value="/WEB-INF/layouts/includes/top.ftl" />
+        <put-attribute name="left" value="/WEB-INF/layouts/includes/left.ftl" />
+        <put-attribute name="bottom" value="/WEB-INF/layouts/includes/bottom.ftl" />
+        <put-attribute name="body" value="/WEB-INF/layouts/includes/blank.ftl" />
+		<!-- Script Load 관련-->
+        <put-attribute name="common.top.script" value="/WEB-INF/layouts/includes/common_top_script.ftl" />
+        <put-attribute name="common.bottom.script" value="/WEB-INF/layouts/includes/common_bottom_script.ftl" />
+        <put-attribute name="service.script" value="/WEB-INF/layouts/includes/blank.ftl" />
+    </definition>
+    
+	<definition name="base.definition" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="contact" extends="base.definition">
+		<put-attribute name="title" value="Contact Manager" />
+		<put-attribute name="body" value="/WEB-INF/jsp/contact.jsp" />
+	</definition>
+
+</tiles-definitions>

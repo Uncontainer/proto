@@ -1,0 +1,45 @@
+.main { 
+	border-top:2px solid #000000; 
+	border-bottom:1px solid #DADADA; 
+	padding-top:15px; 
+	padding-bottom:15px; 
+	width:700px 
+}
+
+.sub { 
+	padding-top:15px; 
+	padding-bottom:15px; 
+	width:700px 
+}
+
+.searchSection { 
+	width:700px; 
+	padding-bottom:15px; 
+}
+
+.resultSection { 
+	position:relative; 
+	width:700px; 
+	border-top:1px dashed #DADADA; 
+	padding-top:15px 
+}
+
+.button {
+	border:1px solid #DADADA;
+	padding: 1px;
+	cursor: pointer;
+}
+
+.selectedButton {
+	border:1px solid #DADADA;
+	padding: 1px;
+	cursor: pointer;
+	background-color:gray;
+}
+
+.tbl_type_item table tbody td {
+    background: url("http://static.naver.net/groupware/2010/line_tbl_dot.gif") repeat-x scroll 0 100% transparent;
+    color: #333333;
+    padding: 6px 0;
+    text-align: left;
+}

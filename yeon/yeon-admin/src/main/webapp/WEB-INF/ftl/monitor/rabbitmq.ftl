@@ -1,0 +1,1 @@
+<iframe src="http://10.24.24.83:55672/mgmt" width="1000px"  style="display: block; height: 1419px;"  frameborder="0"></iframe>

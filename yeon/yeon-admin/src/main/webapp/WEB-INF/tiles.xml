@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- default -->
+    <definition name=".default" template="/WEB-INF/layouts/default.ftl">
+        <put-attribute name="title" value="Yeon Infra Admin" />
+        <put-attribute name="meta" value="/WEB-INF/layouts/includes/meta.ftl" />
+        <put-attribute name="top" value="/WEB-INF/layouts/includes/top.ftl" />
+        <put-attribute name="left" value="/WEB-INF/layouts/includes/left.ftl" />
+        <put-attribute name="bottom" value="/WEB-INF/layouts/includes/bottom.ftl" />
+        <put-attribute name="body" value="/WEB-INF/layouts/includes/blank.ftl" />
+		<!-- Script Load 관련-->
+        <put-attribute name="common.top.script" value="/WEB-INF/layouts/includes/common_top_script.ftl" />
+        <put-attribute name="common.bottom.script" value="/WEB-INF/layouts/includes/common_bottom_script.ftl" />
+        <put-attribute name="service.script" value="/WEB-INF/layouts/includes/blank.ftl" />
+    </definition>
+
+	<!-- Popup Layout -->
+    <definition name="popup:**" template="/WEB-INF/layouts/popup.ftl" >
+        <put-attribute name="title" value="Yeon Infra Admin" />
+        <put-attribute name="meta" value="/WEB-INF/layouts/includes/meta.ftl" />
+        <put-attribute name="body" value="/WEB-INF/ftl/{1}.ftl" />
+		<!-- Script Load 관련-->
+        <put-attribute name="common.top.script" value="/WEB-INF/layouts/includes/common_top_script.ftl" />
+        <put-attribute name="common.bottom.script" value="/WEB-INF/layouts/includes/common_bottom_script.ftl" />
+    </definition>
+    
+    <!-- No Layout -->
+    <definition name="none:**" template="/WEB-INF/layouts/none.ftl" >
+        <put-attribute name="body" value="/views/{1}.ftl" />
+		<!-- Script Load 관련-->
+        <put-attribute name="common.top.script" value="/WEB-INF/layouts/includes/common_top_script.ftl" />
+        <put-attribute name="common.bottom.script" value="/WEB-INF/layouts/includes/common_bottom_script.ftl" />
+    </definition>
+    
+	<!-- JSON Result -->
+     <definition name="json:**" template="/WEB-INF/layouts/json.ftl">
+        <put-attribute name="body" value="/WEB-INF/ftl/common/json/{1}.ftl"/>
+    </definition>
+
+</tiles-definitions>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+    <!-- default -->
+    <definition name=".default" template="/freemarker/layout/default.ftl">
+        <put-attribute name="title" value="Fog" />
+        <put-attribute name="meta" value="/freemarker/layout/includes/meta.ftl" />
+        <put-attribute name="top" value="/freemarker/layout/includes/top.ftl" />
+        <put-attribute name="left" value="/freemarker/layout/includes/left.ftl" />
+        <put-attribute name="bottom" value="/freemarker/layout/includes/bottom.ftl" />
+        <put-attribute name="body" value="/freemarker/layout/includes/blank.ftl" />
+		<!-- Script Load 관련-->
+        <put-attribute name="common.top.script" value="/freemarker/layout/includes/common_top_script.ftl" />
+        <put-attribute name="common.bottom.script" value="/freemarker/layout/includes/common_bottom_script.ftl" />
+        <put-attribute name="service.script" value="/freemarker/layout/includes/blank.ftl" />
+    </definition>
+
+	<!-- Popup Layout -->
+    <definition name="popup:**" template="/freemarker/layout/popup.ftl" >
+        <put-attribute name="title" value="Fog Popup" />
+        <put-attribute name="meta" value="/freemarker/layout/includes/meta.ftl" />
+        <put-attribute name="body" value="/freemarker/view/{1}.ftl" />
+		<!-- Script Load 관련-->
+        <put-attribute name="common.top.script" value="/freemarker/layout/includes/common_top_script.ftl" />
+        <put-attribute name="common.bottom.script" value="/freemarker/layout/includes/common_bottom_script.ftl" />
+        <put-attribute name="service.script" value="/WEB/freemarkerws/{1}_script.ftl" />
+    </definition>
+    
+    <!-- No Layout -->
+    <definition name="none:**" template="/freemarker/layout/none.ftl" >
+        <put-attribute name="body" value="/freemarker/view/{1}.ftl" />
+		<!-- Script Load 관련-->
+        <put-attribute name="common.top.script" value="/freemarker/layout/includes/common_top_script.ftl" />
+        <put-attribute name="common.bottom.script" value="/freemarker/layout/includes/common_bottom_script.ftl" />
+        <put-attribute name="service.script" value="/freemarker/view/{1}_script.ftl" />
+    </definition>
+    
+	<!-- JSON Result -->
+    <definition name="ajax:**" template="/freemarker/layouts/json.ftl">
+        <put-attribute name="body" value="/freemarker/ajax/{1}.ftl"/>
+    </definition>
+    
+    <definition name="plain:**" template="/freemarker/layout/plain.ftl">
+        <put-attribute name="body" value="/freemarker/view/{1}.ftl"/>
+    </definition>
+</tiles-definitions>

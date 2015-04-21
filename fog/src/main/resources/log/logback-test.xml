@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] [%-5level] [%c:%M:%L] - %m%n</Pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="com.nbp.nmp" level="DEBUG" />
+	
+	<logger name="jdbc.sqltiming" level="INFO"/>
+	<logger name="org.springframework" level="INFO"/>
+	<logger name="org.hibernate" level="INFO"/>
+	<logger name="org.apache.tiles" level="INFO" />
+	<logger name="freemarker.ext.servlet" level="INFO" />
+	
+	<root level="ERROR">
+		<appender-ref ref="STDOUT"/>
+	</root>
+</included>

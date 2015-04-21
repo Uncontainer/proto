@@ -1,0 +1,10 @@
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, select, button {margin:0;padding:0}
+body, input, textarea, select, table, button {font-family:"돋움", Dotum, AppleGothic, sans-serif; font-size:12px}
+
+table 			{margin-bottom:-1px; border-collapse:collapse; /* table-layout:fixed; */ line-height:16px; border-spacing:0; }
+table th        {padding:2px 2px 2px 2px; background:#f1f1f3; color:#666; text-align: center;}
+table td        {padding:2px 2px 2px 2px; background:url(http://static.naver.net/groupware/2010/line_tbl_dot.gif) repeat-x 0 100%; color:#333; text-align:left;}
+table td.center {padding:2px 2px 2px 2px; background:url(http://static.naver.net/groupware/2010/line_tbl_dot.gif) repeat-x 0 100%; color:#333; text-align:center;}
+
+.data			{margin-top:5px}
+.bottom_menu	{margin-top:5px}
